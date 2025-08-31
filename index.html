@@ -20,6 +20,7 @@
     #dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
   </style>
   <script>
+	const params = new URLSearchParams(window.location.search);
 	document.getElementById('logo').style.background = params.get('b');
 	document.getElementById('star').style.background = params.get('d');
   </script>
