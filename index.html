@@ -52,9 +52,11 @@
 	    } catch (error) {
 	      console.error(error);
 	    }
-		const back = document.createElement('a');
-		back.href = '';//memo.zu-ga.net
-		back.click();
+		try{
+			const back = document.createElement('a');
+			back.href = '';//memo.zu-ga.net
+			back.click();
+		}
 	  });
 	</script>
 </body>
