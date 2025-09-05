@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>logo.png</title>
+	<title>logo.png+</title>
 </head>
 <body>
   <div class="preview">
@@ -31,6 +31,7 @@
         //imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
         　var imgData = canvas.toDataURL();
         　document.getElementById("result").href = imgData;
+		   document.getElementById("result").innerText = imgData;
         }
       });
     }
