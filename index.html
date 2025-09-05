@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>logo.png+</title>
+	<title>logo.png</title>
 </head>
 <body>
   <div class="preview">
@@ -12,7 +12,6 @@
       <span id="bottom"></span>
 	</div>
   </div>
-　<a id="result" download href>ダウンロードが開始しない場合はここをクリック</a>
   <style>
     .preview{width:fit-content;padding:30px 120px;border:solid 1px;overflow:hidden;background-image:url(https://point.zu-ga.net/pict.php?n=4203&w=90);& div{aspect-ratio:1}}
 	#logo{background:red;width:130px}
@@ -21,6 +20,7 @@
     #dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script>
 	const params = new URLSearchParams(window.location.search);
 	document.getElementById('logo').style.background = params.get('b');
@@ -36,6 +36,18 @@
         }
       });
     }
+	
+	document.getElementById('logo').addEventListener('click', async () => {
+	  try {
+	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
+	    const link = document.createElement('a');
+	    link.href = dataUrl;
+	    link.download = 'logo.png';
+	    link.click();
+	  } catch (err) {
+	    console.error(err);
+	  }
+    });
   </script>
 </body>
 </html>
