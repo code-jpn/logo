@@ -18,10 +18,12 @@
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('load', async () => {
     const params = new URLSearchParams(window.location.search);
     const logo = document.getElementById('logo');
     const deco = document.getElementById('deco');
+    const name = document.getElementById('name');
+    const type = document.getElementById('type');
     logo.style.background = params.get('b');
     deco.style.background = params.get('d');
 	name.innerText = params.get('n');
@@ -37,6 +39,5 @@
     }
   });
 </script>
-
 </body>
 </html>
