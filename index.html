@@ -22,12 +22,8 @@
     const params = new URLSearchParams(window.location.search);
     const logo = document.getElementById('logo');
     const star = document.getElementById('star');
-
-    const b = params.get('b');
-    const d = params.get('d');
-    if (b) logo.style.background = b;
-    if (d) star.style.background = d;
-
+    logo.style.background = params.get('b');
+    star.style.background = params.get('d');
     try {
       const dataUrl = await domtoimage.toPng(logo);
       const link = document.createElement('a');
