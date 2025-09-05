@@ -6,14 +6,14 @@
 </head>
 <body>
   <div id="logo">
-    <div id="pattern"></div>
+    <div id="deco"></div>
 	<span id="name"></span>
     <span id="type"></span>
   </div>
   <style>
-    #logo,#pattern{width:130px;height:130px}
+    #logo,#deco{width:130px;height:130px}
 	#wave{clip-path:path('M -8,82 c 0,0 10,-9 24,-9 14,0 42,15 42,15 0,0 24,15 39,15 C 112,103 130,91 130,91 l 0,14 c 0,0 -21,9 -33,9 -12,0 -38,-12 -38,-12 0,0 -33,-18 -44,-18 -12,0 -23,10 -23,10')}
-	#pattern{background:black;clip-path:path('M 126.3,52.1 95.4,81.2 101.9,123.2 64.6,102.8 26.7,121.9 34.6,80.2 4.7,50 46.8,44.6 66.2,6.9 84.4,45.3')}
+	#deco{background:black;clip-path:path('M 126.3,52.1 95.4,81.2 101.9,123.2 64.6,102.8 26.7,121.9 34.6,80.2 4.7,50 46.8,44.6 66.2,6.9 84.4,45.3')}
     #dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
@@ -23,7 +23,7 @@
     const logo = document.getElementById('logo');
     const pattern = document.getElementById('pattern');
     logo.style.background = params.get('b');
-    pattern.style.background = params.get('p');
+    deco.style.background = params.get('d');
 	name.innerText = params.get('n');
 	type.innerText = params.get('t');
     try {
