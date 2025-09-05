@@ -43,11 +43,13 @@
 		  name.className = '';
 		  type.className = '';
 		}
-        const dataUrl = await domtoimage.toPng(logo);
-        const link = document.createElement('a');
-        link.href = dataUrl;
-        link.download = 'logo.png';
-        link.click();
+		try{
+	      const dataUrl = await domtoimage.toPng(logo);
+	      const link = document.createElement('a');
+	      link.href = dataUrl;
+	      link.download = 'logo.png';
+	      link.click();
+		} catch(error){}
 		const back = document.createElement('a');
 		back.href = '';//memo.zu-ga.net
 		// back.click();
