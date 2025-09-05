@@ -18,15 +18,12 @@
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script>
-	const logo = document.getElementById('logo');
-	const star = document.getElementById('star');
-	const text = document.getElementById('top');
 	const params = new URLSearchParams(window.location.search);
-	logo.style.background = params.get('b');
-	star.style.background = params.get('d');
-	logo.addEventListener('load', async () => {
+	document.getElementById('logo').style.background = params.get('b');
+	document.getElementById('star').style.background = params.get('d');
+	document.getElementById('logo').addEventListener('load', async () => {
 	  try {
-	    const dataUrl = await domtoimage.toPng(logo);
+	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
 	    const link = document.createElement('a');
 	    link.href = dataUrl;
 	    link.download = 'logo.png';
