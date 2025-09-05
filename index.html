@@ -28,20 +28,20 @@
 	    logo.style.background = params.get('b');
 	    deco.style.background = params.get('d');
 		name.innerText = params.get('n');
-		if(set === 0){
-		  deco.class = 'wave';
-		  name.class = '';
-		  type.class = '';
+		if(set === '0'){
+		  deco.className = 'wave';
+		  name.className = '';
+		  type.className = '';
 		}
-		else if(set === 1){
-		  deco.class = 'dia';
-		  name.class = '';
-		  type.class = '';
+		else if(set === '1'){
+		  deco.className = 'dia';
+		  name.className = '';
+		  type.className = '';
 		}
 		else{
-		  deco.class = 'star'
-		  name.class = '';
-		  type.class = '';
+		  deco.className = 'star'
+		  name.className = '';
+		  type.className = '';
 		}
         const dataUrl = await domtoimage.toPng(logo);
         const link = document.createElement('a');
