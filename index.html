@@ -7,7 +7,7 @@
 <body>
 	<div id="logo">
 	  <div id="deco" class="star"></div>
-	  <span id="name"></span>
+	  <span id="name" class=""></span>
 	  <span id="type"></span>
 	</div>
 	<style>
@@ -24,10 +24,13 @@
 	    const deco = document.getElementById('deco');
 	    const name = document.getElementById('name');
 	    const type = document.getElementById('type');
+		const set = params.get('t');
 	    logo.style.background = params.get('b');
 	    deco.style.background = params.get('d');
 		name.innerText = params.get('n');
-		type.innerText = params.get('t');
+		if(set === 0){
+		  name.class = ;
+		}
 	    try {
 	      const dataUrl = await domtoimage.toPng(logo);
 	      const link = document.createElement('a');
