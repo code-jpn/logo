@@ -21,7 +21,7 @@
   document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search);
     const logo = document.getElementById('logo');
-    const pattern = document.getElementById('pattern');
+    const deco = document.getElementById('deco');
     logo.style.background = params.get('b');
     deco.style.background = params.get('d');
 	name.innerText = params.get('n');
