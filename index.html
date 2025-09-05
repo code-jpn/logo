@@ -43,21 +43,14 @@
 		  name.class = '';
 		  type.class = '';
 		}
-	    try {
-	      const dataUrl = await domtoimage.toPng(logo);
-	      const link = document.createElement('a');
-	      link.href = dataUrl;
-	      link.download = 'logo.png';
-	      link.click();
-	    } catch (error) {
-	      console.error(error);
-	    }
-		try{
-			const back = document.createElement('a');
-			back.href = '';//memo.zu-ga.net
-			back.click();
-		} catch (error){}
-	  });
+        const dataUrl = await domtoimage.toPng(logo);
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'logo.png';
+        link.click();
+		const back = document.createElement('a');
+		back.href = '';//memo.zu-ga.net
+		// back.click();
 	</script>
 </body>
 </html>
