@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 	<meta charset="utf-8">
-	<title>サイトタイトル</title>
+	<title>logo.png</title>
 </head>
 <body>
   <div class="preview">
@@ -30,7 +30,7 @@
       　onrendered: function(canvas){
         //imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
         　var imgData = canvas.toDataURL();
-        　document.getElementById("result").src = imgData;
+        　document.getElementById("result").href = imgData;
         }
       });
     }
