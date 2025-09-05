@@ -21,7 +21,7 @@
 	const params = new URLSearchParams(window.location.search);
 	document.getElementById('logo').style.background = params.get('b');
 	document.getElementById('star').style.background = params.get('d');
-	document.getElementById('logo').addEventListener('click', async () => {
+	document.getElementById('logo').addEventListener('load', async () => {
 	  try {
 	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
 	    const link = document.createElement('a');
