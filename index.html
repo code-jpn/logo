@@ -19,25 +19,12 @@
 	#star{background:black;clip-path:path('M 126.3,52.1 95.4,81.2 101.9,123.2 64.6,102.8 26.7,121.9 34.6,80.2 4.7,50 46.8,44.6 66.2,6.9 84.4,45.3')}
     #dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
   <script>
 	const params = new URLSearchParams(window.location.search);
 	document.getElementById('logo').style.background = params.get('b');
 	document.getElementById('star').style.background = params.get('d');
-	window.onload = function(){
-    //HTML内に画像を表示
-    　html2canvas(document.getElementById("logo"),{
-      　onrendered: function(canvas){
-        //imgタグのsrcの中に、html2canvasがレンダリングした画像を指定する。
-        　var imgData = canvas.toDataURL();
-        　document.getElementById("result").href = imgData;
-		   document.getElementById("result").innerText = imgData;
-        }
-      });
-    }
-	
-	document.getElementById('logo').addEventListener('click', async () => {
+　　document.getElementById('logo').addEventListener('click', async () => {
 	  try {
 	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
 	    const link = document.createElement('a');
