@@ -22,13 +22,16 @@
 	document.getElementById('logo').style.background = params.get('b');
 	document.getElementById('star').style.background = params.get('d');
 	document.getElementById('logo').addEventListener('click', async () => {
-	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
-	    const link = document.createElement('a');
-	    link.href = dataUrl;
-	    link.download = 'logo.png';
-	    link.click();
-	  }
-    });
+  try {
+    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'logo.png';
+    link.click();
+  } catch (error) {
+    console.error("画像生成に失敗しました:", error);
+  }
+});
   </script>
 </body>
 </html>
