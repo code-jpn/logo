@@ -8,9 +8,8 @@
 	<div id="logo">
 	  <div id="deco"></div>
 	  <div id="text">
-		<div></div>
 	    <div id="name"></div>
-	    <div></div>
+	    <div id="type"></div>
 	  </div>
 	</div>
 	<style>
@@ -19,9 +18,9 @@
 	  .wave{clip-path:path('M -8,82 c 0,0 10,-9 24,-9 14,0 42,15 42,15 0,0 24,15 39,15 C 112,103 130,91 130,91 l 0,14 c 0,0 -21,9 -33,9 -12,0 -38,-12 -38,-12 0,0 -33,-18 -44,-18 -12,0 -23,10 -23,10')}
 	  .star{background:black;clip-path:path('M 126.3,52.1 95.4,81.2 101.9,123.2 64.6,102.8 26.7,121.9 34.6,80.2 4.7,50 46.8,44.6 66.2,6.9 84.4,45.3')}
 	  .dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
-	  .T0{font-family:;& :nth-child(1){&::before{content:'空'}}}
-	  .T1{font-family:;& :nth-child(3){&::before{content:'都'}}}
-	  .T2{font-family:;& :nth-child(3){&::before{content:'くらぶ';scale:0 calc(2/3)}}}
+	  .T0{flex-direction:column-reverce;font-family:;& #type{&::before{content:'空'}}}
+	  .T1{font-family:;& #type{content:'都'}}}
+	  .T2{font-family:;& #type{&::before{content:'くらぶ';scale:0 calc(2/3)}}}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 	<script>
