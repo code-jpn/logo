@@ -17,21 +17,30 @@
     #dia{clip-path:path('M 67,13 120,67 67,120 13,67')}
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-  <script>
-	const params = new URLSearchParams(window.location.search);
-	document.getElementById('logo').style.background = params.get('b');
-	document.getElementById('star').style.background = params.get('d');
-	document.getElementById('logo').addEventListener('DOMContentLoaded', async () => {
-	  try {
-	    const dataUrl = await domtoimage.toPng(document.getElementById('logo'));
-	    const link = document.createElement('a');
-	    link.href = dataUrl;
-	    link.download = 'logo.png';
-	    link.click();
-	  } catch (error) {
-	    console.error(error);
-	  }
-	});
-  </script>
+<script>
+  document.addEventListener('DOMContentLoaded', async () => {
+    const params = new URLSearchParams(window.location.search);
+    const logo = document.getElementById('logo');
+    const star = document.getElementById('star');
+
+    const b = params.get('b');
+    const d = params.get('d');
+    if (b) logo.style.background = b;
+    if (d) star.style.background = d;
+
+    try {
+      const dataUrl = await domtoimage.toPng(logo);
+      const link = document.createElement('a');
+      link.href = dataUrl;
+      link.download = 'logo.png';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("画像化に失敗しました:", error);
+    }
+  });
+</script>
+
 </body>
 </html>
