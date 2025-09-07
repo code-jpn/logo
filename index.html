@@ -55,16 +55,18 @@
 		else{
 			document.querySelector('svg:nth-of-type(3)').style.display = 'block';
 		}
-		try{
-	      const dataUrl = await domtoimage.toPng(logo);
-	      const link = document.createElement('a');
-	      link.href = dataUrl;
-	      link.download = 'logo.png';
-	      link.click();
-		} catch(error){console.error(error)}
-		const back = document.createElement('a');
-		// back.href = 'memo.zu-ga.net';
-		// back.click();
+		document.fonts.ready.then(() => {
+			try{
+		      const dataUrl = await domtoimage.toPng(logo);
+		      const link = document.createElement('a');
+		      link.href = dataUrl;
+		      link.download = 'logo.png';
+		      link.click();
+			} catch(error){console.error(error)}
+			const back = document.createElement('a');
+			// back.href = 'memo.zu-ga.net';
+			// back.click();
+		  });
 	  });
 	</script>
 </body>
