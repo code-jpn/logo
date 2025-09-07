@@ -40,8 +40,12 @@
 		const name = document.getElementsByClassName('name');
 		const set = params.get('t');
 	    logo.style.background = params.get('b');
-	    deco.style.fill = params.get('d');
-		name.innerText = params.get('n');
+		for (let i = 0; i < 3; i++) {
+			deco[i].style.fill = params.get('d');
+		}
+		for (let i = 0; i < 3; i++) {
+			name[i].innnerText = params.get('n');
+		}
 		if(set === '0'){
 			document.querySelector('svg:nth-child(1)').style.display = 'block';
 		}
