@@ -55,7 +55,7 @@
 		else{
 			document.querySelector('svg[data-dia]').style.display = 'block';
 		}
-		document.fonts.ready.then(async () => {
+		setInterval(async () => {
 			try{
 		      const dataUrl = await domtoimage.toPng(logo);
 		      const link = document.createElement('a');
@@ -66,7 +66,7 @@
 			const back = document.createElement('a');
 			// back.href = 'memo.zu-ga.net';
 			// back.click();
-		});
+		}, 100);
 	</script>
 </body>
 </html>
