@@ -55,7 +55,7 @@
 		else{
 			document.querySelector('svg[data-dia]').style.display = 'block';
 		}
-		setInterval(async () => {
+		setTimeout(async () => {
 			try{
 		      const dataUrl = await domtoimage.toPng(logo);
 		      const link = document.createElement('a');
