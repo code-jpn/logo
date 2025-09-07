@@ -39,10 +39,10 @@
 		const name = document.getElementsByClassName('name');
 		const set = params.get('t');
 	    logo.style.background = params.get('b');
-		for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < deco.length; i++) {
 			deco[i].style.fill = params.get('d');
 		}
-		for (let i = 0; i < 3; i++) {
+		for (let i = 0; i < name.length; i++) {
 			name[i].textContent = params.get('n');
 		}
 		if(set === '0'){
