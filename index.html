@@ -57,13 +57,14 @@
 		else{
 			document.querySelector('svg[data-dia]').style.display = 'block';
 		}
-		document.fonts.ready.then(async () => {
+		document.fonts.ready.then(() => {
 			try{
-		      const dataUrl = await domtoimage.toPng(logo);
-		      const link = document.createElement('a');
-		      link.href = dataUrl;
-		      link.download = 'logo.png';
-		      link.click();
+			　　htmlToImage.toPng(logo).then(function (dataUrl) {
+				  const link = document.createElement('a');
+				  link.download = 'logo.png';
+				  link.href = dataUrl;
+				  link.click(); 
+			  });
 			} catch(error){console.error(error)}
 			const back = document.createElement('a');
 			// back.href = 'memo.zu-ga.net';
