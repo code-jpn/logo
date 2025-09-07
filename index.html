@@ -43,13 +43,13 @@
 	    deco.style.fill = params.get('d');
 		name.innerText = params.get('n');
 		if(set === '0'){
-			document.querySelector('svg:nth-child(1)').style.display = block
+			document.querySelector('svg:nth-child(1)').style.display = 'block';
 		}
 		else if(set === '1'){
-			document.querySelector('svg:nth-child(2)').style.display = block
+			document.querySelector('svg:nth-child(2)').style.display = 'block';
 		}
 		else{
-			document.querySelector('svg:nth-child(3)').style.display = block
+			document.querySelector('svg:nth-child(3)').style.display = 'block';
 		}
 		try{
 	      const dataUrl = await domtoimage.toPng(logo);
