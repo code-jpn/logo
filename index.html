@@ -33,7 +33,6 @@
 	<style>svg{display:none;width:500px}#logo{width:fit-content}body{opacity:.1}</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 	<script>
-	  document.addEventListener('DOMContentLoaded', async () => {
 	    const params = new URLSearchParams(window.location.search);
 	    const logo = document.getElementById('logo');
 		const deco = document.getElementsByTagName('path');
@@ -55,7 +54,7 @@
 		else{
 			document.querySelector('svg[data-dia]').style.display = 'block';
 		}
-		document.fonts.ready.then(() => {
+		document.fonts.ready.then(async () => {
 			try{
 		      const dataUrl = await domtoimage.toPng(logo);
 		      const link = document.createElement('a');
@@ -67,7 +66,6 @@
 			// back.href = 'memo.zu-ga.net';
 			// back.click();
 		  });
-	  });
 	</script>
 </body>
 </html>
