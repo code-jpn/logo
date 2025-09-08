@@ -55,6 +55,8 @@
 				canvas.width = parseInt(viewBox[2]);
 				canvas.height = parseInt(viewBox[3]);
 		        const ctx = canvas.getContext("2d");
+				// ctx.fillStyle = params.get('b') || '#000';
+				// ctx.fillRect(0, 0, canvas.width, canvas.height);
 			    ctx.drawImage(img, 0, 0);
 				const pngUrl = canvas.toDataURL("image/png");
 			    const a = document.createElement("a");
