@@ -34,15 +34,14 @@
 			<text class="text4" y="7.1" x="6.1" lengthAdjust="spacingAndGlyphs" textLength="25%">ん</text>
 		</svg>
 	</div>
-	<script src="https://unpkg.com/html-to-image"></script>
 	<script>
 	    const params = new URLSearchParams(window.location.search);
-		const deco = document.getElementsByTagName('path');
-		const name = document.getElementsByClassName('name');
 		const set = params.get('t');
 		const logo = document.querySelector(`svg[data-type${set}]`);
 		logo.style.display = 'block';
 	    logo.style.background = params.get('b');
+		const deco = logo.getElementsByTagName('path');
+		const name = logo.getElementsByClassName('name');
 		for (let i = 0; i < deco.length; i++) {deco[i].style.fill = params.get('d');}
 		for (let i = 0; i < name.length; i++) {name[i].textContent = params.get('n');
 		document.fonts.ready.then(() => {
