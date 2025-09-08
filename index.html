@@ -42,12 +42,8 @@
 		const name = document.getElementsByClassName('name');
 		const set = params.get('t');
 	    logo.style.background = params.get('b');
-		for (let i = 0; i < deco.length; i++) {
-			deco[i].style.fill = params.get('d');
-		}
-		for (let i = 0; i < name.length; i++) {
-			name[i].textContent = params.get('n');
-		}
+		for (let i = 0; i < deco.length; i++) {deco[i].style.fill = params.get('d');}
+		for (let i = 0; i < name.length; i++) {name[i].textContent = params.get('n');}
 		document.querySelector(`svg[data-type${set}]`).style.display = 'block';
 		document.fonts.ready.then(() => {
 			try{
