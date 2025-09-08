@@ -49,9 +49,8 @@
 			setTimeout(() => {img.src = url},200);
 			img.onload = function () {
 				const canvas = document.createElement("canvas");
-				const viewBox = logo.getAttribute("viewBox").split(" ");
-				canvas.width = parseInt(viewBox[2]);
-				canvas.height = parseInt(viewBox[3]);
+				canvas.width = '1000px';
+				canvas.height = '1000px';
 		        const ctx = canvas.getContext("2d");
 				ctx.fillStyle = params.get('b') || '#000';
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
