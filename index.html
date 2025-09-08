@@ -38,7 +38,6 @@
 	    const params = new URLSearchParams(window.location.search);
 		const set = params.get('t');
 		const logo = document.querySelector(`svg[data-type${set}]`);
-		logo.style.display = 'block';
 		const deco = logo.getElementsByTagName('path');
 		const name = logo.getElementsByClassName('name');
 		for (let i = 0; i < deco.length; i++) {deco[i].style.fill = params.get('d');}
