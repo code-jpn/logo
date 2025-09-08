@@ -49,8 +49,8 @@
 			setTimeout(() => {img.src = url},500);
 			img.onload = function () {
 				const canvas = document.createElement("canvas");
-				canvas.width = '1000px';
-				canvas.height = '1000px';
+				canvas.width = 1000;
+				canvas.height = 1000;
 		        const ctx = canvas.getContext("2d");
 				ctx.fillStyle = params.get('b') || '#000';
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
