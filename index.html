@@ -51,8 +51,9 @@
 			img.src = url;
 			img.onload = function () {
 				const canvas = document.createElement("canvas");
-			    canvas.width = logo.width.baseVal.value;
-				canvas.height = logo.height.baseVal.value;
+				const viewBox = logo.getAttribute("viewBox").split(" ");
+				canvas.width = parseInt(viewBox[2]);
+				canvas.height = parseInt(viewBox[3]);
 		        const ctx = canvas.getContext("2d");
 			    ctx.drawImage(img, 0, 0);
 				const pngUrl = canvas.toDataURL("image/png");
