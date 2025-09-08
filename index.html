@@ -43,7 +43,7 @@
 		const deco = logo.getElementsByTagName('path');
 		const name = logo.getElementsByClassName('name');
 		for (let i = 0; i < deco.length; i++) {deco[i].style.fill = params.get('d');}
-		for (let i = 0; i < name.length; i++) {name[i].textContent = params.get('n');
+		for (let i = 0; i < name.length; i++) {name[i].textContent = params.get('n');}
 		document.fonts.ready.then(() => {
 			const svgData = new XMLSerializer().serializeToString(logo);
 		    const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
@@ -61,11 +61,10 @@
 			    a.href = pngUrl;
 				a.download = "image.png";
 			    a.click();
-		};
+		});
 			// const back = document.createElement('a');
 			// back.href = 'memo.zu-ga.net';
 			// back.click();
-		});
 	</script>
 </body>
 </html>
