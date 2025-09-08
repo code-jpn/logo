@@ -47,25 +47,28 @@
 		for (let i = 0; i < deco.length; i++) {deco[i].style.fill = params.get('d');}
 		for (let i = 0; i < name.length; i++) {name[i].textContent = params.get('n');}
 		document.fonts.ready.then(() => {
-			const styleBlock = `
-  <style><![CDATA[
-    @font-face {
-      font-family: 'Kosugi Maru';
-      src: url('https://fonts.gstatic.com/s/kosugimaru/v18/0nksC9ziJOYewWZpU3bvGQ.woff2') format('woff2');
-    }
-    .text {
-      fill: #fff;
-      font-family: 'Kosugi Maru';
-      font-size: 350%;
-      text-anchor: middle;
-    }
-  ]]></style>
-  `;
-			const svgData = new XMLSerializer().serializeToString(logo);
-			const svgWithStyle = svgData.replace('<svg', `<svg>${styleBlock}`);
-			const svgData = new XMLSerializer().serializeToString(logo);
-		    const svgBlob = new Blob([svgData], { type: "image/svg+xml;charset=utf-8" });
-			const url = URL.createObjectURL(svgBlob);				  const img = new Image();
+			const fontCSS = `
+        <defs>
+          <style><![CDATA[
+            @font-face {
+              font-family: 'Kosugi Maru';
+              src: url('https://fonts.gstatic.com/s/kosugimaru/v18/0nksC9ziJOYewWZpU3bvGQ.woff2') format('woff2');
+            }
+            .text {
+              fill: #fff;
+              font-family: 'Kosugi Maru';
+              font-size: 350%;
+              text-anchor: middle;
+              letter-spacing: -0.05em;
+            }
+          ]]></style>
+        </defs>
+      `;
+			const rawSvg = new XMLSerializer().serializeToString(logo);
+			const svgWithStyle = rawSvg.replace('<svg', `<svg xmlns="http://www.w3.org/2000/svg">${fontCSS}`);
+			const svgBlob = new Blob([svgWithStyle], { type: "image/svg+xml;charset=utf-8" });
+			const url = URL.createObjectURL(svgBlob);
+			const img = new Image();
 			setTimeout(() => {img.src = url},500);
 			img.onload = function () {
 				const canvas = document.createElement("canvas");
